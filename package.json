@@ -1,0 +1,34 @@
+{
+  "name": "personal-site-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run client",
+    "build": "next build",
+    "start": "next start",
+    "client": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpencerMcMurray/PersonalSite-v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpencerMcMurray/PersonalSite-v2/issues"
+  },
+  "homepage": "https://github.com/SpencerMcMurray/PersonalSite-v2#readme",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "next": "^9.3.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.0",
+    "@types/react": "^16.9.23",
+    "typescript": "^3.8.3"
+  }
+}
