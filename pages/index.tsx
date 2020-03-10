@@ -1,6 +1,9 @@
 import { NextPage } from "next";
-import Test from "../components/test";
+import Navigation from "../components/Navigation";
+import { links } from "../public/constants";
 
-const Index: NextPage = () => <Test msg="Hello there!" />;
+const Index: NextPage = () => {
+  return <Navigation links={links} />;
+};
 
 export default Index;
