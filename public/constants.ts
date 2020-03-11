@@ -17,7 +17,7 @@ export const links: Array<Link> = [
     title: "projects"
   },
   {
-    id: 2,
+    id: 4,
     link: "#contact",
     title: "contact"
   }
