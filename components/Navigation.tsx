@@ -1,12 +1,14 @@
-import { NextPage } from "next";
+import { FunctionComponent } from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import { Link } from "../public/interfaces";
+import { Link } from "../public/helpers/interfaces";
+import { ThemeContextInterface } from "./ThemeContext";
 
-export interface NavProps {
+interface NavProps {
   links: Array<Link>;
+  theme: ThemeContextInterface;
 }
 
-const Navigation: NextPage<NavProps> = ({ links }) => {
+const Navigation: FunctionComponent<NavProps> = ({ links, theme }) => {
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="#">Spencer McMurray</Navbar.Brand>
@@ -15,11 +17,14 @@ const Navigation: NextPage<NavProps> = ({ links }) => {
         <Nav className="ml-auto">
           {links.map(link => {
             return (
-              <Nav.Link key={link.id} href={link.link}>
+              <Nav.Link key={link.id} href={link.href}>
                 {link.title}
               </Nav.Link>
             );
           })}
+          <Nav.Link onClick={theme.flipLights}>
+            <h5>{theme.isDark ? "🌞" : "🌚"}</h5>
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

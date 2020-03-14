@@ -1,24 +1,31 @@
 import { Link } from "./interfaces";
 
+export const resumeLink: string = "resume.pdf";
+
 export const links: Array<Link> = [
   {
     id: 1,
-    link: "#about",
+    href: "#about",
     title: "about"
   },
   {
     id: 2,
-    link: "#experience",
+    href: "#experience",
     title: "experience"
   },
   {
     id: 3,
-    link: "#projects",
+    href: "#projects",
     title: "projects"
   },
   {
     id: 4,
-    link: "#contact",
+    href: "#contact",
     title: "contact"
+  },
+  {
+    id: 5,
+    href: "resume.pdf",
+    title: "resume"
   }
 ];
