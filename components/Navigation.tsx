@@ -13,8 +13,8 @@ const Navigation: FunctionComponent<NavProps> = ({ links, themeCtx }) => {
   const theme: Theme = getTheme(themeCtx.isDark);
 
   return (
-    <Navbar className={theme.primary} expand="lg">
-      <Navbar.Brand className={theme.primary} href="#">
+    <Navbar fixed="top" className={"shadow " + theme.bg} expand="lg">
+      <Navbar.Brand className={theme.txt} href="#">
         Spencer McMurray
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -22,11 +22,7 @@ const Navigation: FunctionComponent<NavProps> = ({ links, themeCtx }) => {
         <Nav className="ml-auto">
           {links.map(link => {
             return (
-              <Nav.Link
-                key={link.id}
-                className={theme.primary}
-                href={link.href}
-              >
+              <Nav.Link key={link.id} className={theme.txt} href={link.href}>
                 {link.title}
               </Nav.Link>
             );
