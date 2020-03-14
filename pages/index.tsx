@@ -7,7 +7,7 @@ import ThemeContext from "../components/ThemeContext";
 
 const Index: NextPage = () => {
   const themeCtx = useContext(ThemeContext);
-  return <Navigation links={links} theme={themeCtx} />;
+  return <Navigation links={links} themeCtx={themeCtx} />;
 };
 
 export default Index;

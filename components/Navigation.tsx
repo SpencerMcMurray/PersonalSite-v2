@@ -2,28 +2,37 @@ import { FunctionComponent } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "../public/helpers/interfaces";
 import { ThemeContextInterface } from "./ThemeContext";
+import { getTheme, Theme } from "../public/helpers/theme";
 
 interface NavProps {
   links: Array<Link>;
-  theme: ThemeContextInterface;
+  themeCtx: ThemeContextInterface;
 }
 
-const Navigation: FunctionComponent<NavProps> = ({ links, theme }) => {
+const Navigation: FunctionComponent<NavProps> = ({ links, themeCtx }) => {
+  const theme: Theme = getTheme(themeCtx.isDark);
+
   return (
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#">Spencer McMurray</Navbar.Brand>
+    <Navbar className={theme.primary} expand="lg">
+      <Navbar.Brand className={theme.primary} href="#">
+        Spencer McMurray
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           {links.map(link => {
             return (
-              <Nav.Link key={link.id} href={link.href}>
+              <Nav.Link
+                key={link.id}
+                className={theme.primary}
+                href={link.href}
+              >
                 {link.title}
               </Nav.Link>
             );
           })}
-          <Nav.Link onClick={theme.flipLights}>
-            <h5>{theme.isDark ? "🌞" : "🌚"}</h5>
+          <Nav.Link onClick={themeCtx.flipLights}>
+            <h5>{themeCtx.isDark ? "🌞" : "🌚"}</h5>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
