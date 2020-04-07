@@ -1,4 +1,4 @@
-import { Link } from "./interfaces";
+import { Link, Experience } from "./interfaces";
 
 export const resumeLink: string = "resume.pdf";
 
@@ -27,5 +27,28 @@ export const links: Array<Link> = [
     id: 5,
     href: "resume.pdf",
     title: "resume",
+  },
+];
+
+export const experiences: Array<Experience> = [
+  {
+    start: "Sept. 2015",
+    end: "Jan. 2017",
+    title: "Irish Dance Teacher",
+    company: {
+      name: "Gilchrist-Canavan School of Irish Dance",
+      link: "http://gilchrist-canavan.blogspot.com/",
+    },
+    keyLearnings: ["Teaching Others", "Leadership", "Teamwork"],
+  },
+  {
+    start: "Sept. 2019",
+    end: "Dec. 2019",
+    title: "Software Developer Intern",
+    company: {
+      name: "Ceridian - Dayforce",
+      link: "https://www.ceridian.com/ca/products/dayforce",
+    },
+    keyLearnings: ["C#", "JavaScript", "Agile", "Unit Testing"],
   },
 ];
