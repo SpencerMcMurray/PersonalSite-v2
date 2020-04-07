@@ -14,7 +14,7 @@ export const getTheme = (isDark: boolean): Theme => {
     border: isDark ? "border-light" : "border-dark",
     bgInv: isDark ? "bg-light" : "bg-dark",
     txtInv: isDark ? "text-dark" : "text-light",
-    borderInv: isDark ? "border-dark" : "border-light"
+    borderInv: isDark ? "border-dark" : "border-light",
   };
   return theme;
 };

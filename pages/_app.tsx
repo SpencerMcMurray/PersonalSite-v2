@@ -31,9 +31,6 @@ class MyApp extends App<{}, {}, AppState> {
       <ThemeContext.Provider
         value={{ isDark: this.state.isDark, flipLights: this.flipLights }}
       >
-        <Head>
-          <title>Spencer McMurray</title>
-        </Head>
         <Component {...pageProps} />
       </ThemeContext.Provider>
     );
