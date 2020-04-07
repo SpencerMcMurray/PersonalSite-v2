@@ -1,13 +1,16 @@
 import { FunctionComponent, useContext } from "react";
 import { Theme, getTheme } from "../public/helpers/theme";
 import ThemeContext from "../components/ThemeContext";
+import { experiences } from "../public/helpers/constants";
+
+import ExperienceDisplay from "./ExperienceDisplay";
 
 const Experience: FunctionComponent<{}> = () => {
   const themeCtx = useContext(ThemeContext);
   const theme: Theme = getTheme(themeCtx.isDark);
 
   return (
-    <div id="experience" style={{ height: "75vh" }} className={theme.bg}>
+    <div id="experience" style={{ minHeight: "75vh" }} className={theme.bg}>
       <div className="h-75 d-flex justify-content-center align-items-center container">
         <div className="w-100">
           <div className="row">
@@ -30,7 +33,9 @@ const Experience: FunctionComponent<{}> = () => {
                 world!
               </p>
             </div>
-            <div className="col-md-6"></div>
+            <div className="col-md-6">
+              <ExperienceDisplay exp={experiences} />
+            </div>
           </div>
         </div>
       </div>
