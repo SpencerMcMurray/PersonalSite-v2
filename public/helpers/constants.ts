@@ -6,26 +6,26 @@ export const links: Array<Link> = [
   {
     id: 1,
     href: "#about",
-    title: "about"
+    title: "about",
   },
   {
     id: 2,
     href: "#experience",
-    title: "experience"
+    title: "experience",
   },
   {
     id: 3,
     href: "#projects",
-    title: "projects"
+    title: "projects",
   },
   {
     id: 4,
     href: "#contact",
-    title: "contact"
+    title: "contact",
   },
   {
     id: 5,
     href: "resume.pdf",
-    title: "resume"
-  }
+    title: "resume",
+  },
 ];

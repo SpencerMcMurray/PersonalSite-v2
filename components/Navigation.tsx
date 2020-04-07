@@ -20,7 +20,7 @@ const Navigation: FunctionComponent<NavProps> = ({ links, themeCtx }) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          {links.map(link => {
+          {links.map((link) => {
             return (
               <Nav.Link key={link.id} className={theme.txt} href={link.href}>
                 {link.title}

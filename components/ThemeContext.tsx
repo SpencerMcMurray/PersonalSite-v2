@@ -7,6 +7,6 @@ export interface ThemeContextInterface {
 
 const ThemeContext = createContext<ThemeContextInterface>({
   isDark: false,
-  flipLights: () => console.log("default!")
+  flipLights: () => console.log("default!"),
 });
 export default ThemeContext;
