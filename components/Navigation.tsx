@@ -1,15 +1,15 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useContext } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "../public/helpers/interfaces";
-import { ThemeContextInterface } from "./ThemeContext";
+import ThemeContext, { ThemeContextInterface } from "./ThemeContext";
 import { getTheme, Theme } from "../public/helpers/theme";
 
 interface NavProps {
   links: Array<Link>;
-  themeCtx: ThemeContextInterface;
 }
 
-const Navigation: FunctionComponent<NavProps> = ({ links, themeCtx }) => {
+const Navigation: FunctionComponent<NavProps> = ({ links }) => {
+  const themeCtx = useContext(ThemeContext);
   const theme: Theme = getTheme(themeCtx.isDark);
 
   return (
@@ -20,7 +20,7 @@ const Navigation: FunctionComponent<NavProps> = ({ links, themeCtx }) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          {links.map(link => {
+          {links.map((link) => {
             return (
               <Nav.Link key={link.id} className={theme.txt} href={link.href}>
                 {link.title}
