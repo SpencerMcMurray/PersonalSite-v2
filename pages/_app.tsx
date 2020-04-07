@@ -1,7 +1,7 @@
 import React from "react";
 import App from "next/app";
 import ThemeContext from "../components/ThemeContext";
-import Head from "next/Head";
+import Head from "next/head";
 
 interface AppState {
   isDark: boolean;
