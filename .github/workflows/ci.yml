@@ -1,0 +1,21 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install packages
+        run: npm install
+
+      - name: Lint Action
+        uses: samuelmeuli/lint-action@v1.4.0
+        with:
+          github_token: ${{ secrets.github_token }}
+          # Enable linters
+          prettier: true
+          auto-fix: true
