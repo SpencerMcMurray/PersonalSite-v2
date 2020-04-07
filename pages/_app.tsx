@@ -15,7 +15,14 @@ class MyApp extends App<{}, {}, AppState> {
   }
 
   flipLights() {
+    localStorage.setItem("isDark", (!this.state.isDark).toString());
     this.setState({ isDark: !this.state.isDark });
+  }
+
+  componentDidMount() {
+    if (localStorage.getItem("isDark") === null)
+      localStorage.setItem("isDark", "false");
+    this.setState({ isDark: localStorage.getItem("isDark") === "true" });
   }
 
   render() {
