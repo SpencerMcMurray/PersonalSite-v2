@@ -1,5 +1,5 @@
 import React from "react";
-import { GetStaticProps, NextPage } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import axios from "axios";
 
 import Navigation from "../components/Navigation";
@@ -25,8 +25,10 @@ const Index: NextPage<IndexProps> = ({ projects, langs }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await axios.get(process.env.BASE_URL + "/api/projects");
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { data } = await axios.get(
+    `${process.env.BASE_URL}${ctx.req.headers.host}/api/projects`
+  );
   return { props: { ...data } };
 };
 

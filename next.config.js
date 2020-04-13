@@ -4,10 +4,7 @@ require("dotenv").config();
 module.exports = (phase) => {
   return {
     env: {
-      BASE_URL:
-        phase === PHASE_DEVELOPMENT_SERVER
-          ? "http://localhost:3000"
-          : "https://personal-site-v2-phi-dev.now.sh/",
+      BASE_URL: phase === PHASE_DEVELOPMENT_SERVER ? "http://" : "https://",
       GH_AUTH: process.env.GH_AUTH,
     },
   };
