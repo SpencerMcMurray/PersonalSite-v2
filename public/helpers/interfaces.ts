@@ -16,3 +16,12 @@ export interface Company {
   name: string;
   link: string;
 }
+
+export interface Project {
+  id: number;
+  name: string;
+  desc: string;
+  stars: number;
+  forks: number;
+  langs: Array<string>;
+}

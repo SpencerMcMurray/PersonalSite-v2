@@ -1,12 +1,8 @@
-const clientConfig = {
-  development: {
-    baseUrl: "http://localhost:3000",
-  },
-  production: {
-    baseUrl: "http://localhost:3000",
-  },
-};
+require("dotenv").config();
 
 module.exports = {
-  publicRuntimeConfig: clientConfig[process.env.NODE_ENV || "development"],
+  env: {
+    BASE_URL: "http://localhost:3000",
+    GH_AUTH: process.env.GH_AUTH,
+  },
 };

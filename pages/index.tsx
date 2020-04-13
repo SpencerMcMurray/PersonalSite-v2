@@ -1,6 +1,5 @@
 import React from "react";
 import { GetStaticProps, NextPage } from "next";
-import getConfig from "next/config";
 import axios from "axios";
 
 import Navigation from "../components/Navigation";
@@ -8,12 +7,15 @@ import About from "../components/About";
 import Experience from "../components/Experience";
 
 import { links } from "../public/helpers/constants";
+import { Project } from "../public/helpers/interfaces";
 
 interface IndexProps {
-  projects: Array<string>;
+  projects: Array<Project>;
+  langs: Array<string>;
 }
 
-const Index: NextPage<IndexProps> = ({ projects }) => {
+const Index: NextPage<IndexProps> = ({ projects, langs }) => {
+  console.log(projects, langs);
   return (
     <React.Fragment>
       <Navigation links={links} />
@@ -24,11 +26,8 @@ const Index: NextPage<IndexProps> = ({ projects }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const {
-    publicRuntimeConfig: { baseUrl },
-  } = getConfig();
-  const { data: projects } = await axios.get(baseUrl + "/api/projects");
-  return { props: { projects } };
+  const { data } = await axios.get(process.env.BASE_URL + "/api/projects");
+  return { props: { ...data } };
 };
 
 export default Index;
