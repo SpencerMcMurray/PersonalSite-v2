@@ -17,7 +17,7 @@ const ProjectsFilter: FunctionComponent<ProjFilterProps> = ({
 }) => {
   return (
     <div className="pt-2 d-flex justify-content-between flex-wrap">
-      <h3 className={`${theme.txtInv}`}>Filter by language</h3>
+      <h3 className={theme.txtInv}>Filter by language</h3>
 
       <DropdownButton
         id="proj-filter-dropdown"
