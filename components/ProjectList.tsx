@@ -21,19 +21,23 @@ const ProjectCard: FunctionComponent<ProjCardProps> = ({ project, theme }) => {
       <Card.Body>
         <Card.Subtitle className="mb-3 row">
           <div className="pl-3 col-1-sm">
-            <i className={"fas fa-star " + theme.txt} />{" "}
+            <i className="fas fa-star text-warning" />{" "}
             <span className={theme.txt}>{project.stars}</span>
           </div>
           <div className="col-1-sm">
-            <i className={"fas fa-code-branch pl-2 " + theme.txt} />{" "}
+            <i className="fas fa-code-branch pl-2 text-success" />{" "}
             <span className={theme.txt}>{project.forks}</span>
           </div>
         </Card.Subtitle>
         <Card.Text className={theme.txt}>{project.desc}</Card.Text>
       </Card.Body>
       <Card.Footer>
-        {project.langs.map((lang) => {
-          return <span className={theme.txt}>{lang + ", "}</span>;
+        {project.langs.map((lang, i) => {
+          return (
+            <span key={i} className={theme.txt}>
+              {lang + (i !== project.langs.length - 1 ? ", " : "")}
+            </span>
+          );
         })}
       </Card.Footer>
     </Card>

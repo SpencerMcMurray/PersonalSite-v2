@@ -44,6 +44,10 @@ class MyApp extends App<{}, {}, AppState> {
               integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
               crossOrigin="anonymous"
             />
+            <link
+              rel="stylesheet"
+              href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+            />
             <link rel="stylesheet" type="text/css" href="main.css" />
             <title>Spencer McMurray</title>
           </Head>

@@ -20,16 +20,19 @@ const Projects: FunctionComponent<{}> = () => {
   if (error) console.log(error);
 
   useEffect(() => {
-    if (data) setProjects(data.projects);
+    if (data) setProjects(data.projects.slice(0, 5));
   }, [data]);
 
   useEffect(() => {
     if (data) {
-      if (!selLang) setProjects(data.projects);
-      else
+      if (!selLang) setProjects(data.projects.slice(0, 5));
+      else {
         setProjects(
-          data.projects.filter((proj: Project) => proj.langs.includes(selLang))
+          data.projects
+            .filter((proj: Project) => proj.langs.includes(selLang))
+            .slice(0, 5)
         );
+      }
     }
   }, [selLang]);
 
