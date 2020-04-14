@@ -43,7 +43,7 @@ const ExperienceDisplay: FunctionComponent<ExpDisplayProps> = ({ exp }) => {
   const theme: Theme = getTheme(themeCtx.isDark);
 
   return (
-    <div className={theme.bgInv + " border rounded " + theme.border}>
+    <div className={theme.bgInv + " border rounded"}>
       {exp.map((oneXp, idx) => {
         return (
           <Fragment key={oneXp.start}>

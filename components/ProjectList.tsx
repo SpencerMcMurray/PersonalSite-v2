@@ -10,7 +10,7 @@ interface ProjCardProps {
 
 const ProjectCard: FunctionComponent<ProjCardProps> = ({ project, theme }) => {
   return (
-    <Card bg={theme.variantInv}>
+    <Card bg={theme.variant} border={theme.variantInv}>
       <Card.Header>
         <h4>
           <a href={project.link} className={theme.txt}>
@@ -29,7 +29,7 @@ const ProjectCard: FunctionComponent<ProjCardProps> = ({ project, theme }) => {
             <span className={theme.txt}>{project.forks}</span>
           </div>
           <div className="col-1-sm" title="Contributions">
-            <i className="fas fa-code pl-2 text-info" />{" "}
+            <i className="fas fa-code pl-2 text-danger" />{" "}
             <span className={theme.txt}>{project.contribs}</span>
           </div>
         </Card.Subtitle>

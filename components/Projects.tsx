@@ -53,7 +53,7 @@ const Projects: FunctionComponent<{}> = () => {
           </div>
           <div className="px-2 pt-4 row" style={{ minHeight: "25vh" }}>
             <div
-              className={`w-100 d-flex justify-content-center align-items-center border rounded ${theme.border} ${theme.bgInv}`}
+              className={`w-100 d-flex justify-content-center align-items-center border rounded ${theme.bgInv}`}
             >
               {!data ? (
                 <Spinner animation="border" variant={theme.variantInv} />
