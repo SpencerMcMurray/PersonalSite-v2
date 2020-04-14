@@ -1,8 +1,9 @@
 import { FunctionComponent, useContext, useState, useEffect } from "react";
-import { Spinner } from "react-bootstrap";
+import { Spinner, Button } from "react-bootstrap";
 import useSWR from "swr";
 
 import ProjectsFilter from "./ProjectsFilter";
+import ProjectList from "./ProjectList";
 import ThemeContext from "./ThemeContext";
 
 import { Theme, getTheme } from "../public/helpers/theme";
@@ -32,13 +33,11 @@ const Projects: FunctionComponent<{}> = () => {
     }
   }, [selLang]);
 
-  console.log(projects);
-
   return (
     <div
       id="projects"
       style={{ minHeight: "75vh", paddingTop: "100px" }}
-      className={theme.bg}
+      className={`pb-4 ${theme.bg}`}
     >
       <div className="h-75 d-flex justify-content-center align-items-center container">
         <div className="w-100">
@@ -54,13 +53,22 @@ const Projects: FunctionComponent<{}> = () => {
               {!data ? (
                 <Spinner animation="border" variant={theme.variantInv} />
               ) : (
-                <div className="px-4 w-100">
+                <div className="m-4 w-100">
                   <ProjectsFilter
                     langs={data.langs}
                     theme={theme}
                     selLang={selLang}
                     setSelLang={setSelLang}
                   />
+                  <ProjectList projects={projects} theme={theme} />
+                  <div className="pt-4 col-12 text-center">
+                    <Button
+                      variant="warning"
+                      href="https://github.com/SpencerMcMurray"
+                    >
+                      (git) checkout more!
+                    </Button>
+                  </div>
                 </div>
               )}
             </div>

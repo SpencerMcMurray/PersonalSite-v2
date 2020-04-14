@@ -42,6 +42,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           desc: repos[i].description || "",
           stars: repos[i].stargazers_count,
           forks: repos[i].forks_count,
+          link: repos[i].html_url,
           langs,
         };
       })
