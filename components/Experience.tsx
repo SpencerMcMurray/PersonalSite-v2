@@ -10,7 +10,11 @@ const Experience: FunctionComponent<{}> = () => {
   const theme: Theme = getTheme(themeCtx.isDark);
 
   return (
-    <div id="experience" style={{ minHeight: "75vh" }} className={theme.bg}>
+    <div
+      id="experience"
+      style={{ minHeight: "75vh", paddingTop: "100px" }}
+      className={theme.bg}
+    >
       <div className="h-75 d-flex justify-content-center align-items-center container">
         <div className="w-100">
           <div className="row">
