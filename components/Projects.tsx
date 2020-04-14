@@ -9,6 +9,8 @@ import ThemeContext from "./ThemeContext";
 import { Theme, getTheme } from "../public/helpers/theme";
 import { Project } from "../public/helpers/interfaces";
 
+const MAX_PROJS = 6;
+
 const Projects: FunctionComponent<{}> = () => {
   const [selLang, setSelLang] = useState<string | null>(null);
   const [projects, setProjects] = useState([]);
@@ -20,17 +22,17 @@ const Projects: FunctionComponent<{}> = () => {
   if (error) console.log(error);
 
   useEffect(() => {
-    if (data) setProjects(data.projects.slice(0, 5));
+    if (data) setProjects(data.projects.slice(0, MAX_PROJS));
   }, [data]);
 
   useEffect(() => {
     if (data) {
-      if (!selLang) setProjects(data.projects.slice(0, 5));
+      if (!selLang) setProjects(data.projects.slice(0, MAX_PROJS));
       else {
         setProjects(
           data.projects
             .filter((proj: Project) => proj.langs.includes(selLang))
-            .slice(0, 5)
+            .slice(0, MAX_PROJS)
         );
       }
     }
@@ -49,7 +51,7 @@ const Projects: FunctionComponent<{}> = () => {
               <h2 className={theme.headers.title}>Projects</h2>
             </div>
           </div>
-          <div className="pt-4 row" style={{ minHeight: "25vh" }}>
+          <div className="px-2 pt-4 row" style={{ minHeight: "25vh" }}>
             <div
               className={`w-100 d-flex justify-content-center align-items-center border rounded ${theme.border} ${theme.bgInv}`}
             >
@@ -76,10 +78,9 @@ const Projects: FunctionComponent<{}> = () => {
               )}
             </div>
           </div>
-          <div className="row">
+          <div className="pl-2 row">
             <small className={theme.txt}>
-              Projects fetched from{" "}
-              <a href="https://github.com/SpencerMcMurray">my GitHub</a>
+              Projects updated in real-time from GitHub
             </small>
           </div>
         </div>

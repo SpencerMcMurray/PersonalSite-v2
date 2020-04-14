@@ -7,6 +7,8 @@ const endpoints = {
   repos: "https://api.github.com/users/spencermcmurray/repos",
   langs: (name: string) =>
     `https://api.github.com/repos/SpencerMcMurray/${name}/languages`,
+  contribs: (name: string) =>
+    `https://api.github.com/repos/SpencerMcMurray/${name}/contributors`,
 };
 
 const get = async (endpoint: string) => {
@@ -33,20 +35,28 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const projects: Array<Project> = [];
   for (let i = 0; i < repos.length; i++) {
     projects.push(
-      await get(endpoints.langs(repos[i].name)).then((data) => {
-        const langs = Object.keys(data);
-        langs.forEach((lang: string) => allLangs.add(lang));
-        return {
-          id: repos[i].id,
-          name: repos[i].name,
-          desc: repos[i].description || "",
-          stars: repos[i].stargazers_count,
-          forks: repos[i].forks_count,
-          link: repos[i].html_url,
-          langs,
-        };
+      await get(endpoints.langs(repos[i].name)).then(async (langData) => {
+        return await get(endpoints.contribs(repos[i].name)).then(
+          (contribData) => {
+            const langs = Object.keys(langData);
+            langs.forEach((lang: string) => allLangs.add(lang));
+            return {
+              id: repos[i].id,
+              name: repos[i].name,
+              desc: repos[i].description || "",
+              stars: repos[i].stargazers_count,
+              forks: repos[i].forks_count,
+              link: repos[i].html_url,
+              contribs: contribData
+                .filter((user: any) => user.login === "SpencerMcMurray")
+                .pop().contributions,
+              langs,
+            };
+          }
+        );
       })
     );
   }
+  projects.sort((a, b) => b.stars + b.forks - a.stars + a.forks);
   res.status(200).json({ projects, langs: Array.from(allLangs) });
 };

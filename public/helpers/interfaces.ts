@@ -24,5 +24,6 @@ export interface Project {
   stars: number;
   forks: number;
   link: string;
+  contribs: number;
   langs: Array<string>;
 }

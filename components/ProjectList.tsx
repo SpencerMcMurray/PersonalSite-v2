@@ -20,13 +20,17 @@ const ProjectCard: FunctionComponent<ProjCardProps> = ({ project, theme }) => {
       </Card.Header>
       <Card.Body>
         <Card.Subtitle className="mb-3 row">
-          <div className="pl-3 col-1-sm">
+          <div className="pl-3 col-1-sm" title="Stars">
             <i className="fas fa-star text-warning" />{" "}
             <span className={theme.txt}>{project.stars}</span>
           </div>
-          <div className="col-1-sm">
+          <div className="col-1-sm" title="Forks">
             <i className="fas fa-code-branch pl-2 text-success" />{" "}
             <span className={theme.txt}>{project.forks}</span>
+          </div>
+          <div className="col-1-sm" title="Contributions">
+            <i className="fas fa-code pl-2 text-info" />{" "}
+            <span className={theme.txt}>{project.contribs}</span>
           </div>
         </Card.Subtitle>
         <Card.Text className={theme.txt}>{project.desc}</Card.Text>

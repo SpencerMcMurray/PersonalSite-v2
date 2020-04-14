@@ -24,6 +24,7 @@ const ProjectsFilter: FunctionComponent<ProjFilterProps> = ({
         title="Select Language"
         variant="warning"
       >
+        <Dropdown.Item onClick={() => setSelLang(null)}>Show All</Dropdown.Item>
         {langs.map((lang) => {
           return (
             <Dropdown.Item
