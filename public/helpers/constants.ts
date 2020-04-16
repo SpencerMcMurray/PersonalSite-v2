@@ -32,16 +32,6 @@ export const links: Array<Link> = [
 
 export const experiences: Array<Experience> = [
   {
-    start: "Sept. 2015",
-    end: "Jan. 2017",
-    title: "Irish Dance Teacher",
-    company: {
-      name: "Gilchrist-Canavan School of Irish Dance",
-      link: "http://gilchrist-canavan.blogspot.com/",
-    },
-    keyLearnings: ["Teaching Others", "Leadership", "Teamwork"],
-  },
-  {
     start: "Sept. 2019",
     end: "Dec. 2019",
     title: "Software Developer Intern",
@@ -50,6 +40,16 @@ export const experiences: Array<Experience> = [
       link: "https://www.ceridian.com/ca/products/dayforce",
     },
     keyLearnings: ["C#", "JavaScript", "Agile", "Unit Testing"],
+  },
+  {
+    start: "Sept. 2015",
+    end: "Jan. 2017",
+    title: "Irish Dance Teacher",
+    company: {
+      name: "Gilchrist-Canavan School of Irish Dance",
+      link: "http://gilchrist-canavan.blogspot.com/",
+    },
+    keyLearnings: ["Teaching Others", "Leadership", "Teamwork"],
   },
 ];
 
