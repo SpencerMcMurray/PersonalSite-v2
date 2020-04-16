@@ -4,11 +4,11 @@ import axios from "axios";
 import { Project } from "../../../public/helpers/interfaces";
 
 const endpoints = {
-  repos: "https://api.github.com/users/spencermcmurray/repos",
+  repos: `https://api.github.com/users/${process.env.GH_NAME}/repos`,
   langs: (name: string) =>
-    `https://api.github.com/repos/SpencerMcMurray/${name}/languages`,
+    `https://api.github.com/repos/${process.env.GH_NAME}/${name}/languages`,
   contribs: (name: string) =>
-    `https://api.github.com/repos/SpencerMcMurray/${name}/contributors`,
+    `https://api.github.com/repos/${process.env.GH_NAME}/${name}/contributors`,
 };
 
 const get = async (endpoint: string) => {
@@ -23,7 +23,7 @@ const get = async (endpoint: string) => {
       return res.data;
     })
     .catch((e) => {
-      //console.log(e);
+      console.log(e);
       return [];
     });
 };
@@ -48,7 +48,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
               forks: repos[i].forks_count,
               link: repos[i].html_url,
               contribs: contribData
-                .filter((user: any) => user.login === "SpencerMcMurray")
+                .filter((user: any) => user.login === process.env.GH_NAME)
                 .pop().contributions,
               langs,
             };
