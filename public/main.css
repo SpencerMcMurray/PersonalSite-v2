@@ -2,6 +2,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.layout {
+  padding-top: 100px;
+}
+
+.projects {
+  min-height: 50vh;
+}
+
 .title {
   font-size: 4rem;
 }

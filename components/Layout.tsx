@@ -20,8 +20,8 @@ const Layout: FunctionComponent<LayoutProps> = ({
   return (
     <div
       id={id}
-      style={{ minHeight: height || "75vh", paddingTop: "100px" }}
-      className={`${theme.bg} ${className}`}
+      style={{ minHeight: height || "75vh" }}
+      className={`layout ${theme.bg} ${className}`}
     >
       <div className="h-75 d-flex justify-content-center align-items-center container">
         <div className="w-100">{children}</div>

@@ -46,7 +46,7 @@ const Projects: FunctionComponent<{}> = () => {
           <h2 className={theme.headers.title}>Projects</h2>
         </div>
       </div>
-      <div className="px-2 pt-4 row" style={{ minHeight: "25vh" }}>
+      <div className="projects px-2 pt-4 row">
         <div
           className={`w-100 d-flex justify-content-center align-items-center border rounded ${theme.bgInv}`}
         >
