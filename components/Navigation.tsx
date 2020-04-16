@@ -1,8 +1,10 @@
 import { FunctionComponent, useContext } from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import { Link } from "../public/helpers/interfaces";
-import ThemeContext, { ThemeContextInterface } from "./ThemeContext";
+
+import ThemeContext from "./ThemeContext";
+
 import { getTheme, Theme } from "../public/helpers/theme";
+import { Link } from "../public/helpers/interfaces";
 
 interface NavProps {
   links: Array<Link>;

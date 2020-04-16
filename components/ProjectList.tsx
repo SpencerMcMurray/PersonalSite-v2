@@ -1,7 +1,8 @@
 import { FunctionComponent } from "react";
+import { Card, CardColumns } from "react-bootstrap";
+
 import { Theme } from "../public/helpers/theme";
 import { Project } from "../public/helpers/interfaces";
-import { Card, CardColumns } from "react-bootstrap";
 
 interface ProjCardProps {
   project: Project;
