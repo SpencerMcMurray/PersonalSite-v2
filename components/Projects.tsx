@@ -56,7 +56,7 @@ const Projects: FunctionComponent<{}> = () => {
               className={`w-100 d-flex justify-content-center align-items-center border rounded ${theme.bgInv}`}
             >
               {!data ? (
-                <Spinner animation="border" variant={theme.variantInv} />
+                <Spinner animation="border" variant={theme.variant} />
               ) : (
                 <div className="m-4 w-100">
                   <ProjectsFilter
