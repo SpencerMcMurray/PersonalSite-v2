@@ -13,10 +13,42 @@ cd PersonalSitev2
 
 Install dependancies with `npm i`
 
-Then run the client with `next`
+### Development:
+
+Generate a GitHub personal access token [here](https://github.com/settings/tokens)
+
+Then create a .env file for development
+
+```
+GH_AUTH=my-personal-access-token
+GH_NAME=my-github-username
+```
+
+You can now run the site locally with `next`.
+
+### Hosting:
+
+For hosting use [Zeit Now](https://zeit.co). Start by installing the CLI & creating a deployment.
+
+```
+npm i -g now
+now
+```
+
+Now set up the environment variables on the deployed version by running
+
+```
+now secret add gh-auth my-personal-access-token
+now secret add gh-name my-github-username
+```
+
+You can now view the deployed site on the url given.
 
 ## Tech used
 
 This is the up to date (but to be added upon) list of the tech stack
 
 - [Next.js](https://github.com/zeit/next.js)
+- [Next.js Serverless Functions](https://zeit.co/docs/v2/serverless-functions/introduction)
+- [Zeit Now](https://zeit.co/)
+- [GitHub API v3](https://developer.github.com/v3/)
