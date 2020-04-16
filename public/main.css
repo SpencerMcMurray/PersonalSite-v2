@@ -13,3 +13,12 @@ html {
 .sub-header {
   font-size: 1.5rem;
 }
+
+.link-icon {
+  font-size: 2.5rem;
+  opacity: 0.75;
+}
+
+.link-icon:hover {
+  opacity: 1;
+}

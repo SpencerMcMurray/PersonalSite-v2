@@ -8,6 +8,7 @@ import Experience from "../components/Experience";
 import { links } from "../public/helpers/constants";
 import { Project } from "../public/helpers/interfaces";
 import Projects from "../components/Projects";
+import Contacts from "../components/Contacts";
 
 interface IndexProps {
   projects: Array<Project>;
@@ -21,6 +22,7 @@ const Index: NextPage<IndexProps> = () => {
       <About />
       <Experience />
       <Projects />
+      <Contacts />
     </React.Fragment>
   );
 };
