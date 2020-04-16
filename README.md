@@ -48,9 +48,9 @@ You can now view the deployed site on the url given.
 
 If you want to fork this for personal use, don't forget to change the data to fit yourself.
 
-## Tech used
+## Tech used 💻
 
-This is the up to date (but to be added upon) list of the tech stack
+This is the up to date list of the tech stack
 
 - [Next.js](https://github.com/zeit/next.js)
 - [Next.js Serverless Functions](https://zeit.co/docs/v2/serverless-functions/introduction)
