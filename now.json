@@ -1,7 +1,8 @@
 {
   "build": {
     "env": {
-      "GH_AUTH": "@gh-auth"
+      "GH_AUTH": "@gh-auth",
+      "GH_NAME": "@gh-name"
     }
   }
 }

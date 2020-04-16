@@ -6,6 +6,7 @@ module.exports = (phase) => {
     env: {
       BASE_URL: phase === PHASE_DEVELOPMENT_SERVER ? "http://" : "https://",
       GH_AUTH: process.env.GH_AUTH,
+      GH_NAME: process.env.GH_NAME,
     },
   };
 };
