@@ -1,7 +1,9 @@
 import { FunctionComponent, Fragment, useContext } from "react";
-import { Theme, getTheme } from "../public/helpers/theme";
+
 import ThemeContext from "../components/ThemeContext";
+
 import { Experience } from "../public/helpers/interfaces";
+import { Theme, getTheme } from "../public/helpers/theme";
 
 interface ExpItemProps {
   oneXp: Experience;

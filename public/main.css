@@ -2,6 +2,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.layout {
+  padding-top: 100px;
+}
+
+.projects {
+  min-height: 50vh;
+}
+
 .title {
   font-size: 4rem;
 }
@@ -12,4 +20,13 @@ html {
 
 .sub-header {
   font-size: 1.5rem;
+}
+
+.link-icon {
+  font-size: 2.5rem;
+  opacity: 0.75;
+}
+
+.link-icon:hover {
+  opacity: 1;
 }

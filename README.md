@@ -44,6 +44,10 @@ now secret add gh-name my-github-username
 
 You can now view the deployed site on the url given.
 
+### Important Note
+
+If you want to fork this for personal use, don't forget to change the constants.ts & resume.pdf to fit yourself.
+
 ## Tech used
 
 This is the up to date (but to be added upon) list of the tech stack

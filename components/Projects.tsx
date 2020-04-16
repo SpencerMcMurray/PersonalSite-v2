@@ -2,6 +2,7 @@ import { FunctionComponent, useContext, useState, useEffect } from "react";
 import { Spinner, Button } from "react-bootstrap";
 import useSWR from "swr";
 
+import Layout from "./Layout";
 import ProjectsFilter from "./ProjectsFilter";
 import ProjectList from "./ProjectList";
 import ThemeContext from "./ThemeContext";
@@ -39,53 +40,45 @@ const Projects: FunctionComponent<{}> = () => {
   }, [selLang]);
 
   return (
-    <div
-      id="projects"
-      style={{ minHeight: "75vh", paddingTop: "100px" }}
-      className={`pb-4 ${theme.bg}`}
-    >
-      <div className="h-75 d-flex justify-content-center align-items-center container">
-        <div className="w-100">
-          <div className="row">
-            <div className="col-12">
-              <h2 className={theme.headers.title}>Projects</h2>
-            </div>
-          </div>
-          <div className="px-2 pt-4 row" style={{ minHeight: "25vh" }}>
-            <div
-              className={`w-100 d-flex justify-content-center align-items-center border rounded ${theme.bgInv}`}
-            >
-              {!data ? (
-                <Spinner animation="border" variant={theme.variant} />
-              ) : (
-                <div className="m-4 w-100">
-                  <ProjectsFilter
-                    langs={data.langs}
-                    theme={theme}
-                    selLang={selLang}
-                    setSelLang={setSelLang}
-                  />
-                  <ProjectList projects={projects} theme={theme} />
-                  <div className="pt-4 col-12 text-center">
-                    <Button
-                      variant="warning"
-                      href="https://github.com/SpencerMcMurray"
-                    >
-                      (git) checkout more!
-                    </Button>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-          <div className="pl-2 row">
-            <small className={theme.txt}>
-              Projects updated in real-time from GitHub
-            </small>
-          </div>
+    <Layout id="projects">
+      <div className="row">
+        <div className="col-12">
+          <h2 className={theme.headers.title}>Projects</h2>
         </div>
       </div>
-    </div>
+      <div className="projects px-2 pt-4 row">
+        <div
+          className={`w-100 d-flex justify-content-center align-items-center border rounded ${theme.bgInv}`}
+        >
+          {!data ? (
+            <Spinner animation="border" variant={theme.variant} />
+          ) : (
+            <div className="m-4 w-100">
+              <ProjectsFilter
+                langs={data.langs}
+                theme={theme}
+                selLang={selLang}
+                setSelLang={setSelLang}
+              />
+              <ProjectList projects={projects} theme={theme} />
+              <div className="pt-4 col-12 text-center">
+                <Button
+                  variant="warning"
+                  href="https://github.com/SpencerMcMurray"
+                >
+                  (git) checkout more!
+                </Button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+      <div className="pl-2 row">
+        <small className={theme.txt}>
+          Projects updated in real-time from GitHub
+        </small>
+      </div>
+    </Layout>
   );
 };
 
