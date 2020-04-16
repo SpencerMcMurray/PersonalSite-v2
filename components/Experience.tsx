@@ -20,14 +20,14 @@ const Experience: FunctionComponent<{}> = () => {
       </div>
       <div className="pt-4 row">
         <div className="col-md-6">
-          <p className={theme.headers.header}>
+          <p className={`${theme.headers.header} pb-2`}>
             Looks like you're interested, good to hear!
           </p>
-          <p className={theme.headers.subHeader}>
+          <p className={`${theme.headers.subHeader} py-3`}>
             I'm in my 3rd year studying Computer Science at the University of
             Toronto and I've had a love of building things all my life.
           </p>
-          <p className={theme.headers.subHeader}>
+          <p className={`${theme.headers.subHeader} py-3`}>
             Right now I'm on the hunt for Software Development/Engineering
             internships to expand my knowledge & prepare me for the outside
             world!

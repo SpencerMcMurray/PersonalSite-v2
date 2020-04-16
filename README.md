@@ -46,7 +46,7 @@ You can now view the deployed site on the url given.
 
 ### Important Note
 
-If you want to fork this for personal use, don't forget to change the constants.ts & resume.pdf to fit yourself.
+If you want to fork this for personal use, don't forget to change the data to fit yourself.
 
 ## Tech used
 
