@@ -57,6 +57,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       })
     );
   }
-  projects.sort((a, b) => b.stars + b.forks - a.stars + a.forks);
+  projects.sort((a, b) => b.stars + b.forks - (a.stars + a.forks));
   res.status(200).json({ projects, langs: Array.from(allLangs) });
 };
