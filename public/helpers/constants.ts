@@ -32,6 +32,26 @@ export const links: Array<Link> = [
 
 export const experiences: Array<Experience> = [
   {
+    start: "Sept. 2020",
+    end: "Mar. 2021",
+    title: "Software Developer",
+    company: {
+      name: "TD via UofT",
+      link: "https://www.td.com",
+    },
+    keyLearnings: ["Product Development", "TypeScript", "Team Building"],
+  },
+  {
+    start: "Sept. 2020",
+    end: "Dec. 2020",
+    title: "Software Developer Intern",
+    company: {
+      name: "Ceridian - Dayforce",
+      link: "https://www.ceridian.com/ca/products/dayforce",
+    },
+    keyLearnings: ["C#", "JavaScript", "Agile", "Unit Testing"],
+  },
+  {
     start: "Sept. 2019",
     end: "Dec. 2019",
     title: "Software Developer Intern",
