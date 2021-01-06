@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/SpencerMcMurray/PersonalSite-v2#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "concurrently": "^5.2.0",
     "dotenv": "^8.2.0",
