@@ -64,7 +64,7 @@ export const experiences: Array<Experience> = [
   {
     start: "Sept. 2015",
     end: "Jan. 2017",
-    title: "Irish Dance Teacher",
+    title: "Irish Dance Instructor",
     company: {
       name: "Gilchrist-Canavan School of Irish Dance",
       link: "http://gilchrist-canavan.blogspot.com/",
